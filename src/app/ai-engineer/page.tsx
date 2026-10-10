@@ -83,7 +83,7 @@ export default function AIAgentDeveloperPage() {
             </div>
 
             {/* Heading */}
-            <h1 className="max-w-[620px] text-[42px] font-black uppercase leading-[0.92] tracking-[-0.04em] sm:text-[52px] md:text-[62px]">
+            <h1 className="max-w-[620px] text-[28px] font-black uppercase leading-[0.92] tracking-[-0.04em] sm:text-[28px] md:text-[28px]">
               AI Agent
               <br />
               <span className="text-white">Developer</span>

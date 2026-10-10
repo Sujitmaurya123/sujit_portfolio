@@ -2,18 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import {
-  Database,
-  Server,
-  Bot,
-  Cloud,
-  Code2,
-  Smartphone,
-  GitBranch,
-  Layers3,
-  Brain,
-  Boxes,
-} from "lucide-react";
+
 
 /* =========================================================
    SKILLS DATA
@@ -270,16 +259,16 @@ export default function SkillsPage() {
 
           <h1
             className="
-              text-[52px]
+              text-[17px]
               font-black
               uppercase
               leading-[0.9]
               tracking-[-0.045em]
               text-white
               drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]
-              sm:text-[65px]
-              md:text-[78px]
-              lg:text-[88px]
+              sm:text-[18px]
+              md:text-[28px]
+              lg:text-[28px]
             "
           >
             Skills

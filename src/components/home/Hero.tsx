@@ -277,7 +277,7 @@ export default function Hero() {
 
               {/* Projects */}
               <Link
-                href="#projects"
+                href="/projects"
                 className="
                   group
                   flex
@@ -322,47 +322,44 @@ export default function Hero() {
 
 
               {/* Resume */}
-              <a
-                href="/resume.pdf"
-                download
-                className="
-                  group
-                  flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/[0.08]
-                  px-7
-                  py-4
-                  text-[13px]
-                  font-bold
-                  text-white
-                  backdrop-blur-xl
+<a
+  href="/assets/CV_SujitKumar.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group
+    flex
+    items-center
+    gap-3
+    rounded-full
+    border
+    border-white/10
+    bg-white/[0.08]
+    px-7
+    py-4
+    text-[13px]
+    font-bold
+    text-white
+    backdrop-blur-xl
+    transition-all
+    duration-300
+    hover:border-[#1DB954]/40
+    hover:bg-white/[0.12]
+  "
+>
+  <Download
+    size={19}
+    className="transition-transform duration-300 group-hover:-translate-y-1"
+  />
 
-                  transition-all
-                  duration-300
+  View Resume
+</a>
 
-                  hover:border-[#1DB954]/40
-                  hover:bg-white/[0.12]
-                "
-              >
-                <Download
-                  size={19}
-                  className="
-                    transition
-                    group-hover:-translate-y-1
-                  "
-                />
-
-                Download Resume
-              </a>
 
 
               {/* Hire */}
               <Link
-                href="#contact"
+                href="/contact"
                 className="
                   flex
                   items-center
@@ -414,19 +411,16 @@ export default function Hero() {
             >
 
               <SocialButton
-                href="#"
+                href="https://github.com/Sujitmaurya123"
                 icon={<FaGithub size={18} />}
               />
 
               <SocialButton
-                href="#"
+                href="https://www.linkedin.com/in/thesujitkumar"
                 icon={<FaLinkedin size={18} />}
               />
 
-              <SocialButton
-                href="#"
-                icon={<FaInstagram size={18} />}
-              />
+              
 
             </motion.div>
 

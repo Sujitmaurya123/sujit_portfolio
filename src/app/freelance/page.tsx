@@ -6,22 +6,16 @@ import { useState } from "react";
 
 import {
   ArrowRight,
-  ArrowUpRight,
   Bot,
   Box,
   BriefcaseBusiness,
-  Check,
-  ChevronDown,
   Cloud,
   Code2,
   Database,
-  ExternalLink,
   Layers3,
   MessageCircle,
-  Phone,
   RefreshCw,
   Server,
-  Settings2,
   Smartphone,
   Sparkles,
   Zap,
@@ -277,16 +271,16 @@ export default function FreelancePage() {
             {/* Heading */}
             <h1
               className="
-                text-[48px]
+                text-[28px]
                 font-black
                 uppercase
                 leading-[0.9]
                 tracking-[-0.045em]
                 text-white
                 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]
-                sm:text-[60px]
-                md:text-[78px]
-                lg:text-[88px]
+                sm:text-[20px]
+                md:text-[28px]
+                lg:text-[28px]
               "
             >
               Available For Freelance

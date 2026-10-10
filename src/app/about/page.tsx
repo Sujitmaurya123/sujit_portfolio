@@ -4,14 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  BookOpen,
   CalendarDays,
-  CheckCircle2,
-  Code2,
   GraduationCap,
-  MapPin,
-  Sparkles,
-  Trophy,
 } from "lucide-react";
 
 /* =========================================================
@@ -32,7 +26,7 @@ const stats = [
     label: "RECOMMENDATION ENGINES BUILT",
   },
   {
-    value: "12+",
+    value: "8+",
     label: "AI AGENTS IN PRODUCTION",
   },
 ];
@@ -46,18 +40,18 @@ const interests = [
 const education = [
   {
     number: "01",
-    degree: "Matriculation",
-    institution: "Sanskar Bharti Global School",
-    location: "Phulparas, Bihar",
-    period: "03/2016 — 03/2017",
+    degree: "High school",
+    institution: "Kishan Inter College Rajgarh Mirzapur",
+    location: "Mirzapur, Uttar Pradesh",
+    period: "03/2015 — 03/2017",
     color: "orange",
     latest: false,
   },
   {
     number: "02",
-    degree: "Higher Secondary School",
-    institution: "Sanskar Bharti Global School",
-    location: "Phulparas, Bihar",
+    degree: "Inter",
+    institution: "BBS School & College Shivkuti Prayagraj",
+    location: "Mirzapur, Uttar Pradesh",
     period: "03/2017 — 03/2019",
     color: "pink",
     latest: false,
@@ -65,8 +59,8 @@ const education = [
   {
     number: "03",
     degree: "Bachelor of Technology",
-    institution: "Poornima College of Engineering, RTU",
-    location: "Sitapura, Jaipur, Rajasthan",
+    institution: "Chatrapati Sahuji Maharaj Kanpur University, Kanpur",
+    location: "Kanpur, Uttar Pradesh",
     period: "09/2021 — 05/2025",
     color: "green",
     latest: true,
@@ -117,7 +111,7 @@ export default function AboutPage() {
         <div className="relative z-10 mx-auto max-w-[1500px] px-6 pb-20 pt-12 md:px-10 lg:px-12">
           {/* Episode */}
 
-          <div className="mb-5">
+          <div className="mb-5 mt-10">
             <span className="text-[11px] font-black uppercase tracking-[0.45em] text-[#1DB954]">
               EP 1
             </span>
@@ -127,16 +121,16 @@ export default function AboutPage() {
 
           <h1
             className="
-              text-[50px]
+              text-[17px]
               font-black
               uppercase
               leading-[0.9]
               tracking-[-0.045em]
               text-white
               drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]
-              sm:text-[62px]
-              md:text-[78px]
-              lg:text-[88px]
+              sm:text-[22px]
+              md:text-[38px]
+              lg:text-[38px]
             "
           >
             About Me
@@ -147,12 +141,12 @@ export default function AboutPage() {
           <p
             className="
               mt-7
-              max-w-[850px]
+              max-w-[750px]
               text-[17px]
               font-medium
               leading-7
               text-white/70
-              md:text-[21px]
+              md:text-[18px]
               md:leading-8
             "
           >
@@ -239,14 +233,7 @@ export default function AboutPage() {
 
           <div>
             <p className="text-[18px] leading-8 text-white/65 md:text-[20px] md:leading-9">
-              I started out chasing a Java internship, moved into Flutter,
-              and kept following the thread until it led me into full-stack
-              architecture — designing the data layer, the API layer, and
-              the interface layer of a product as one connected system.
-              Today most of my time goes into AI agents: voice systems,
-              recommendation engines, and automation pipelines that plug
-              straight into how a business actually operates. I like
-              products with a real user on the other end, not demos.
+              A highly motivated and skilled individual with a B.Tech in Computer Science and Engineering from UIET Kanpur. Proficient in full-stack web development, competitive programming, and UI/UX design. Demonstrates a strong foundation in computer science principles and practical experience in developing and deploying web applications. Passionate about solving complex problems through code and creating intuitive user interfaces.
             </p>
 
             <p className="mt-7 text-[18px] leading-8 text-white/65 md:text-[20px] md:leading-9">

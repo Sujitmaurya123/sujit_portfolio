@@ -23,29 +23,29 @@ const navigation = [
 const contacts = [
   {
     label: "Email",
-    href: "mailto:work@example.com",
+    href: "mailto:sujitkic6802maurya@gmail.com.com",
     icon: Mail,
   },
   {
     label: "Call",
-    href: "tel:+919934601244",
+    href: "tel:+917318079820",
     icon: Phone,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/thesujitkumar",
     icon: FaLinkedin,
     external: true,
   },
   {
     label: "GitHub",
-    href: "https://github.com/",
+    href: "https://github.com/Sujitmaurya123",
     icon: FaGithub,
     external: true,
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/919934601244",
+    href: "https://wa.me/917318079820",
     icon: MessageCircle,
     external: true,
   },

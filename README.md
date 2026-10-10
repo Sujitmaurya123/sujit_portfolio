@@ -1,36 +1,206 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sujit Kumar — Full-Stack & AI Engineer
 
-## Getting Started
+<p align="center">
+  <a href="https://sujit-portfolio-delta.vercel.app">
+    <strong>🌐 View Portfolio</strong>
+  </a>
+</p>
 
-First, run the development server:
+<p align="center">
+  Full-Stack Developer specializing in AI/LLM Engineering, Backend Systems, and scalable web applications.
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+  <a href="https://linkedin.com/in/thesujitkumar">LinkedIn</a> •
+  <a href="https://github.com/Sujitmaurya123">GitHub</a> •
+  <a href="mailto:sujitkic6802maurya@gmail.com">Email</a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 👨‍💻 About Me
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+I'm **Sujit Kumar**, a Full-Stack Developer and AI Engineer with experience building scalable web applications, AI-powered systems, backend services, and automation workflows.
 
-## Learn More
+My work focuses on:
 
-To learn more about Next.js, take a look at the following resources:
+* 🤖 AI Agents & LLM Applications
+* 🧠 RAG & Context-Aware AI Systems
+* ⚡ FastAPI, Node.js & Microservices
+* 🌐 React.js & Next.js Applications
+* 📱 Flutter Mobile Applications
+* 🐳 Docker & CI/CD
+* ☁️ Cloud Deployment & Infrastructure
+* 📊 Real-Time Data & Analytics Systems
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Currently working as a **Full-Stack Developer at Vereda Digital Technologies**, where I develop AI agents, recommendation systems, web/mobile applications, and scalable backend infrastructure.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 💼 Experience
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Full-Stack Developer — Vereda Digital Technologies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**June 2025 – Present · Remote**
+
+* Developed an ML-based recommendation engine using **Python and FastAPI**, improving match accuracy from **40% to 65%**.
+* Increased weekly active users by **30%** and conversions by **20%**.
+* Delivered both **web and Flutter mobile applications** with responsive interfaces and advanced admin analytics/moderation panels.
+* Optimized CI/CD and deployment pipelines, reducing deployment time by **70%**.
+* Reduced moderation cycles by **60%** and contributed to a **15% reduction in product feature backlog**.
+* Developing **AI agents** for automated appointment booking, complaint handling, and customer support workflows.
+
+### Full-Stack Developer Intern — Projectile45
+
+**November 2024 – May 2025 · Remote**
+
+* Built a production application using **Next.js, Node.js, and MongoDB**.
+* Improved API performance by approximately **45%**.
+* Implemented authentication, real-time data fetching, and caching.
+* Reduced application errors by **33%** and improved page-load performance.
+
+---
+
+## 🚀 Projects
+
+### Telemetry Pipeline
+
+**Python · FastAPI · RabbitMQ · MongoDB · REST API · Docker**
+
+A scalable real-time telemetry processing pipeline for a deception technology / honeypot system.
+
+**Key Features**
+
+* Captures real-time security telemetry events.
+* Processes events from activities such as:
+
+  * SSH brute-force attempts
+  * SQL injection
+  * Malware activity
+  * Port scans
+* Built a Docker-based microservices architecture.
+* Uses **RabbitMQ** for event streaming and asynchronous processing.
+* Uses **FastAPI REST APIs** for service communication.
+* Stores processed telemetry in **MongoDB**.
+* Designed for scalable and reliable real-time security event processing.
+
+[🔗 View on GitHub](https://github.com/Sujitmaurya123)
+
+---
+
+### AI Agent
+
+**FastAPI · LangChain · RAG · Pydantic · Streamlit · OpenAI API**
+
+An AI-powered conversational agent designed for context-aware conversations and scalable AI workflows.
+
+**Key Features**
+
+* Built conversational AI capabilities using **Python and OpenAI APIs**.
+* Implemented **LangChain-based AI workflows**.
+* Designed a **RAG pipeline** for context-aware responses.
+* Used **FastAPI and Pydantic** for scalable backend services and structured data validation.
+* Built an interactive interface using **Streamlit**.
+* Designed the architecture for extensible AI-agent workflows.
+
+[🔗 View on GitHub](https://github.com/Sujitmaurya123)
+
+---
+
+## 🛠️ Technical Skills
+
+### Programming Languages
+
+`Python` `C++` `JavaScript` `TypeScript` `SQL`
+
+### AI / LLM Engineering
+
+`LangChain` `LangGraph` `Hugging Face Transformers` `OpenAI API`
+
+`RAG Pipelines` `Prompt Engineering` `AI Agents`
+
+`Vector Databases` `Embedding Models` `LLM Application Development`
+
+### Backend
+
+`FastAPI` `Node.js` `Express.js`
+
+`REST APIs` `Microservices Architecture`
+
+### Frontend
+
+`React.js` `Next.js` `Tailwind CSS`
+
+`ShadCN` `React Flow` `Material UI`
+
+### Cloud & DevOps
+
+`Docker` `Nginx` `GitHub Actions`
+
+`AWS EC2` `AWS S3` `Vercel` `Render`
+
+### Databases
+
+`MySQL` `MongoDB` `PostgreSQL` `Supabase`
+
+### Other Tools
+
+`Git` `GitHub` `Postman` `Linux` `Shell`
+
+`Figma` `Prisma` `Sequelize`
+
+---
+
+## 🏆 Achievements
+
+* 🟢 **LeetCode:** Top **7.58%**, Max Rating **1818**, 500+ problems solved.
+* 🟢 **GeeksforGeeks:** 500+ DSA problems solved.
+* 🏅 **LeetCode Biweekly Contest #134:** Global Rank **1827**.
+* 🏅 **GeeksforGeeks Weekly Coding Contest #142:** Rank **446**.
+* 🏆 **CodeKaze 2023:** Ranked **1494 / 42,000+ participants**.
+* ⭐ **CodeChef:** 3-Star.
+* ⭐ **GeeksforGeeks:** 4-Star.
+* ⭐ **LeetCode:** Rating **1818**.
+
+---
+
+## 🎓 Education
+
+### Chhatrapati Shahu Ji Maharaj University
+
+**Kanpur, India**
+
+**B.Tech — Computer Science & Engineering**
+
+**July 2021 – July 2025**
+
+Relevant Coursework:
+
+* Data Structures & Algorithms
+* Operating Systems
+* Database Management Systems
+* Machine Learning
+* Software Engineering
+
+---
+
+## 📫 Connect With Me
+
+**Sujit Kumar**
+
+📞 +91-7318079820
+📧 [sujitkic6802maurya@gmail.com](mailto:sujitkic6802maurya@gmail.com)
+
+🌐 Portfolio: https://sujit-portfolio-delta.vercel.app
+
+💼 LinkedIn: https://linkedin.com/in/thesujitkumar
+
+💻 GitHub: https://github.com/Sujitmaurya123
+
+---
+
+## ⭐ Portfolio
+
+If you find my projects interesting, feel free to explore my portfolio and GitHub repositories.
+
+**[Visit Sujit Kumar's Portfolio →](https://sujit-portfolio-delta.vercel.app)**

@@ -166,7 +166,7 @@ const Nav = () => {
         ================================================= */}
 
         <Link
-          href="/#contact"
+          href="/contact"
           className="
             hidden
             sm:flex

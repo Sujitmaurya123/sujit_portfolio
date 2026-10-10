@@ -5,14 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 import {
-  ArrowUpRight,
   Check,
   Mail,
   MapPin,
   MessageCircle,
   Phone,
   Send,
-  Sparkles,
 } from "lucide-react";
 import { FaGithub,FaLinkedin } from "react-icons/fa";
 
@@ -178,19 +176,19 @@ export default function ContactPage() {
 
           <h1
             className="
-              text-[50px]
+              text-[28px]
               font-black
               uppercase
               leading-[0.9]
               tracking-[-0.045em]
               text-white
               drop-shadow-[0_4px_15px_rgba(0,0,0,0.8)]
-              sm:text-[62px]
-              md:text-[76px]
-              lg:text-[86px]
+              sm:text-[22px]
+              md:text-[28px]
+              lg:text-[28px]
             "
           >
-            Let's Talk
+            Let&apos;s Talk
           </h1>
 
           {/* Subtitle */}
@@ -429,7 +427,7 @@ export default function ContactPage() {
                 href="mailto:work@example.com"
                 title="Email"
               >
-                work@example.com
+                sujitkic6802maurya@gmail.com
               </ContactItem>
 
               {/* Phone */}
@@ -439,13 +437,13 @@ export default function ContactPage() {
                 href="tel:+919934601244"
                 title="Phone"
               >
-                +91 99346 01244
+                +91 7318079820
               </ContactItem>
 
               {/* Location */}
 
               <ContactItem icon={MapPin} title="Location">
-                Sitapura, Jaipur, India
+                Mirzapur, Uttar Pradesh, India
               </ContactItem>
             </div>
 
@@ -453,25 +451,20 @@ export default function ContactPage() {
 
             <div className="mt-10 flex items-center gap-4">
               <SocialButton
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/thesujitkumar"
                 label="LinkedIn"
               >
                 <FaLinkedin size={19} />
               </SocialButton>
 
               <SocialButton
-                href="https://github.com"
+                href="https://github.com/Sujitmaurya123"
                 label="GitHub"
               >
                 <FaGithub size={19} />
               </SocialButton>
 
-              <SocialButton
-                href="https://wa.me/919934601244"
-                label="WhatsApp"
-              >
-                <MessageCircle size={19} />
-              </SocialButton>
+            
             </div>
 
             {/* Availability */}

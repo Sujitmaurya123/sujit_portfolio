@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { BriefcaseBusiness, MapPin, CalendarDays } from "lucide-react";
+import { MapPin, CalendarDays } from "lucide-react";
 
 /* =========================================================
    EXPERIENCE DATA
@@ -13,7 +13,7 @@ const experiences = [
     company: "Vereda Technologies",
     location: "Patna, Bihar",
 
-    startDate: "2025-04-01",
+    startDate: "2025-05-01",
     endDate: null,
 
     description:
@@ -32,36 +32,22 @@ const experiences = [
   },
 
   {
-    role: "Flutter Intern",
-    company: "Vigorous Healthtech Pvt Ltd",
-    location: "Near WTP, Jaipur",
+    role: "Full Stack Developer Intern",
+    company: "P45",
+    location: "Kanpur",
 
-    startDate: "2024-08-01",
-    endDate: "2024-08-31",
+    startDate: "2024-10-01",
+    endDate: "2025-04-31",
 
     description:
-      "Worked on Flutter-based mobile app development in a healthtech environment.",
+      "Developed a robust and scalable full-stack web application for the EdTech startup Projectile45, delivering seamless user experiences and efficient functionality.",
 
-    technologies: ["Flutter", "Mobile"],
+    technologies: ["NextJs", "Full Stack Developer"],
 
     current: false,
   },
 
-  {
-    role: "Java Intern",
-    company: "CodeSpeedy Pvt Ltd",
-    location: "Kolkata, West Bengal, India",
-
-    startDate: "2022-06-01",
-    endDate: "2022-08-31",
-
-    description:
-      "Backend fundamentals and Java-based problem solving in a live internship program.",
-
-    technologies: ["Java", "Backend"],
-
-    current: false,
-  },
+  
 ];
 
 /* =========================================================
@@ -118,16 +104,16 @@ export default function ExperiencePage() {
 
           <h1
             className="
-              text-[50px]
+              text-[17px]
               font-black
               uppercase
               leading-[0.9]
               tracking-[-0.045em]
               text-white
               drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]
-              sm:text-[62px]
-              md:text-[78px]
-              lg:text-[88px]
+              sm:text-[17px]
+              md:text-[28px]
+              lg:text-[28px]
             "
           >
             Experience
