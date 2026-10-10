@@ -139,7 +139,7 @@ export default function ContactPage() {
 
         <div className="absolute inset-0">
           <Image
-            src="/assets/sujitsk.png"
+            src="/images/contacts.jpg"
             alt="Let's talk"
             fill
             priority

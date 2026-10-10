@@ -66,7 +66,7 @@ export default function ExperiencePage() {
 
         <div className="absolute inset-0">
           <Image
-              src="/assets/sujitsk.png"
+              src="/images/exp.jpg"
             alt="Developer workspace"
             fill
             priority

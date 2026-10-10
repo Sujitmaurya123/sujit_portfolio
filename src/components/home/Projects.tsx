@@ -19,57 +19,49 @@ const projects = [
     type: "AI",
     title: "Vedronix",
     description: "AI Agent. Voice AI. Enterprise Automation.",
-    image: "/images/projects/vedronix.jpg",
-    href: "#",
+    image: "/images/projects/vedronixImage1.png",
+    href: "/project-details/vedronix",
   },
   {
     type: "APP",
     title: "Wedlock",
     description:
       "Modern matrimonial matching, built mobile-first.",
-    image: "/images/projects/wedlock.jpg",
-    href: "#",
+    image: "/images/projects/wedlockbanner.png",
+    href: "/project-details/wedlock",
   },
   {
     type: "APP",
     title: "Ved Vivah",
     description:
       "Traditional matchmaking, built for Vedic culture.",
-    image: "/images/projects/vedvivah.jpg",
-    href: "#",
-  },
-  {
-    type: "IOS",
-    title: "Rex Commodity",
-    description:
-      "Live oil & petroleum market intelligence.",
-    image: "/images/projects/rex.jpg",
-    href: "#",
+    image: "/images/projects/vedvivah.avif",
+    href: "/project-details/vedvivah",
   },
   {
     type: "CRM",
     title: "SimplySynced AI",
     description:
       "A full SaaS CRM, built for roofing businesses.",
-    image: "/images/projects/simplysynced.jpg",
-    href: "#",
+    image: "/images/projects/smai.avif",
+    href: "/project-details/simplysyncedai",
   },
-  {
-    type: "WEB",
-    title: "Project Six",
-    description:
-      "Modern web application with scalable architecture.",
-    image: "/images/projects/simplysynced.jpg",
-    href: "#",
-  },
-  {
-    type: "AI",
-    title: "Project Seven",
-    description:
-      "AI-powered automation and intelligent workflows.",
-    image: "/images/projects/simplysynced.jpg",
-    href: "#",
-  },
+  // {
+  //   type: "WEB",
+  //   title: "Project Six",
+  //   description:
+  //     "Modern web application with scalable architecture.",
+  //   image: "/images/projects/simplysynced.jpg",
+  //   href: "#",
+  // },
+  // {
+  //   type: "AI",
+  //   title: "Project Seven",
+  //   description:
+  //     "AI-powered automation and intelligent workflows.",
+  //   image: "/images/projects/simplysynced.jpg",
+  //   href: "#",
+  // },
 ];
 
 

@@ -83,7 +83,7 @@ export default function AboutPage() {
 
         <div className="absolute inset-0">
           <Image
-             src="/assets/sujitsk.png"
+             src="/images/aboutme.jpg"
             alt="About me"
             fill
             priority
@@ -187,7 +187,7 @@ export default function AboutPage() {
               "
             >
               <Image
-                src="/images/profile.jpg"
+                src="/assets/sujitsk.png"
                 alt="Profile"
                 fill
                 className="object-cover"

@@ -36,9 +36,9 @@ const aiProjects: Project[] = [
   {
     title: "Vedronix",
     description: "AI Agents. Voice AI. Enterprise Automation.",
-    image: "/images/projects/vedronix.jpg",
+    image: "/images/projects/vedronixImage1.png",
     label: "AI",
-    href: "https://vedronix.com",
+    href: "/project-details/vedronix",
   },
 ];
 
@@ -46,62 +46,62 @@ const matrimonialProjects: Project[] = [
   {
     title: "Wedlock",
     description: "Modern matrimonial matching, built mobile-first.",
-    image: "/images/projects/wedlock.jpg",
+    image: "/images/projects/wedlockbanner.png",
     label: "APP",
-    href: "#",
+   href: "/project-details/wedlock",
   },
   {
     title: "Ved Vivah",
     description: "Traditional matchmaking, built for Vedic culture.",
-    image: "/images/projects/ved-vivah.jpg",
+    image: "/images/projects/vedvivah.avif",
     label: "APP",
-    href: "#",
+     href: "/project-details/vedvivah",
   },
 ];
 
-const enterpriseProjects: Project[] = [
-  {
-    title: "Rex Commodity",
-    description: "Live oil & petroleum market intelligence.",
-    image: "/images/projects/rex-commodity.jpg",
-    label: "IOS",
-    href: "#",
-  },
-];
+// const enterpriseProjects: Project[] = [
+//   {
+//     title: "Rex Commodity",
+//     description: "Live oil & petroleum market intelligence.",
+//     image: "/images/projects/rex-commodity.jpg",
+//     label: "IOS",
+//     href: "#",
+//   },
+// ];
 
 const saasProjects: Project[] = [
   {
     title: "SimplySynced AI",
     description: "A full SaaS CRM, built for roofing businesses.",
-    image: "/images/projects/simplysynced.jpg",
+    image: "/images/projects/smai.avif",
     label: "CRM",
-    href: "#",
+    href: "/project-details/simplysyncedai",
   },
-  {
-    title: "Heather Laura",
-    description: "A polished, modern business web presence.",
-    image: "/images/projects/heather-laura.jpg",
-    label: "WEB",
-    href: "#",
-  },
+  // {
+  //   title: "Heather Laura",
+  //   description: "A polished, modern business web presence.",
+  //   image: "/images/projects/heather-laura.jpg",
+  //   label: "WEB",
+  //   href: "#",
+  // },
 ];
 
 const marketplaceProjects: Project[] = [
   {
     title: "FabricMart",
     description: "B2B marketplace for industrial materials.",
-    image: "/images/projects/fabricmart.jpg",
+    image: "/images/projects/fabric.avif",
     label: "B2B",
-    href: "#",
+    href: "/project-details/fabricmart",
   },
 ];
 
 const developmentProjects: DevelopmentProject[] = [
-  {
-    title: "E-Chat",
-    description: "A Stack Overflow-style space for developers.",
-    technologies: ["PHP"],
-  },
+  // {
+  //   title: "E-Chat",
+  //   description: "A Stack Overflow-style space for developers.",
+  //   technologies: ["PHP"],
+  // },
   {
     title: "AI Powered Calling Agent",
     description: "Book appointments and answer questions — over a call.",
@@ -153,16 +153,16 @@ export default function ProjectsPage() {
           <h1
             className="
               max-w-[900px]
-              text-[48px]
+              text-[28px]
               font-black
               uppercase
               leading-[0.9]
               tracking-[-0.045em]
               text-white
               drop-shadow-[0_5px_20px_rgba(0,0,0,0.8)]
-              sm:text-[62px]
-              md:text-[78px]
-              lg:text-[88px]
+              sm:text-[22px]
+              md:text-[28px]
+              lg:text-[28px]
             "
           >
             Featured Projects
@@ -202,10 +202,10 @@ export default function ProjectsPage() {
             ENTERPRISE
         ================================================== */}
 
-        <ProjectSection
+        {/* <ProjectSection
           title="Enterprise & Industry"
           projects={enterpriseProjects}
-        />
+        /> */}
 
         {/* =================================================
             SAAS

@@ -242,7 +242,7 @@ export default function FreelancePage() {
 
         <div className="absolute inset-0">
           <Image
-              src="/assets/sujitsk.png"
+              src="/images/freelance.jpg"
             alt="Freelance workspace"
             fill
             priority

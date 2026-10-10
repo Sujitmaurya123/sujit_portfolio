@@ -56,7 +56,7 @@ export default function AIAgentDeveloperPage() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image
-            src="/assets/sujitsk.png"
+            src="/images/aieng.jpg"
             alt="AI Agent Developer background"
             fill
             priority
@@ -219,7 +219,7 @@ export default function AIAgentDeveloperPage() {
               {/* Image */}
               <div className="relative h-[150px] overflow-hidden">
                 <Image
-                  src="/images/vedronix-ai-agent.jpg"
+                  src="/images/projects/vedronixImage1.png"
                   alt="Vedronix AI Agent"
                   fill
                   className="
@@ -253,7 +253,7 @@ export default function AIAgentDeveloperPage() {
 
                   {/* External link */}
                   <Link
-                    href="https://vedronix.com"
+                    href="/project-details/vedronix"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit Vedronix"
@@ -285,7 +285,7 @@ export default function AIAgentDeveloperPage() {
 
                 {/* Bottom CTA */}
                 <Link
-                  href="https://vedronix.com"
+                  href="/project-details/vedronix"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

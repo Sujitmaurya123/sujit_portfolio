@@ -216,7 +216,7 @@ export default function SkillsPage() {
 
         <div className="absolute inset-0">
           <Image
-             src="/assets/sujitsk.png"
+             src="/images/skills.jpg"
             alt="Developer workspace"
             fill
             priority
