@@ -2,23 +2,58 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, ReactNode, useState } from "react";
 
-import {
-  Check,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Send,
-} from "lucide-react";
-import { FaGithub,FaLinkedin } from "react-icons/fa";
+import { Check, Mail, MapPin, Phone, Send } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import type { LucideIcon } from "lucide-react";
+
+/* =========================================================
+   TYPES
+========================================================= */
+
+type Status = "idle" | "loading" | "success";
+
+interface FormState {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+interface InputProps {
+  name: string;
+  type?: string;
+  placeholder?: string;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+}
+
+interface ChoiceButtonProps {
+  children: ReactNode;
+  active: boolean;
+  onClick: () => void;
+}
+
+interface ContactItemProps {
+  icon: LucideIcon;
+  children: ReactNode;
+  href?: string;
+  title: string;
+}
+
+interface SocialButtonProps {
+  children: ReactNode;
+  href: string;
+  label: string;
+}
 
 /* =========================================================
    DATA
 ========================================================= */
 
-const projectTypes = [
+const projectTypes: string[] = [
   "App",
   "Web",
   "Backend",
@@ -26,7 +61,7 @@ const projectTypes = [
   "AI Agent",
 ];
 
-const budgets = [
+const budgets: string[] = [
   "Under ₹15,000",
   "₹15,000 – ₹40,000",
   "₹40,000 – ₹1,00,000",
@@ -39,23 +74,23 @@ const budgets = [
 ========================================================= */
 
 export default function ContactPage() {
-  const [selectedProjects, setSelectedProjects] = useState([]);
-  const [selectedBudget, setSelectedBudget] = useState("");
+  const [selectedProjects, setSelectedProjects] = useState<string[]>([]);
+  const [selectedBudget, setSelectedBudget] = useState<string>("");
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
 
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState<Status>("idle");
 
   /* -------------------------------------------------------
      Toggle Project
   ------------------------------------------------------- */
 
-  const toggleProject = (project) => {
+  const toggleProject = (project: string) => {
     setSelectedProjects((current) => {
       if (current.includes(project)) {
         return current.filter((item) => item !== project);
@@ -69,7 +104,9 @@ export default function ContactPage() {
      Form Change
   ------------------------------------------------------- */
 
-  const handleChange = (event) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
 
     setForm((current) => ({
@@ -82,7 +119,7 @@ export default function ContactPage() {
      Submit
   ------------------------------------------------------- */
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!form.name || !form.email || !form.message) {
@@ -247,9 +284,7 @@ export default function ContactPage() {
               <div>
                 <label className="mb-3 block text-[14px] font-medium text-white/70">
                   What are you building?{" "}
-                  <span className="text-white/40">
-                    (pick all that apply)
-                  </span>
+                  <span className="text-white/40">(pick all that apply)</span>
                 </label>
 
                 <div className="flex flex-wrap gap-2">
@@ -463,8 +498,6 @@ export default function ContactPage() {
               >
                 <FaGithub size={19} />
               </SocialButton>
-
-            
             </div>
 
             {/* Availability */}
@@ -503,8 +536,8 @@ export default function ContactPage() {
               </div>
 
               <p className="mt-3 text-[13px] leading-6 text-white/50">
-                Full-stack development, AI agents, SaaS products,
-                automation and production deployments.
+                Full-stack development, AI agents, SaaS products, automation
+                and production deployments.
               </p>
             </div>
           </aside>
@@ -531,7 +564,7 @@ function Input({
   value,
   onChange,
   required = false,
-}) {
+}: InputProps) {
   return (
     <input
       name={name}
@@ -567,11 +600,7 @@ function Input({
    CHOICE BUTTON
 ========================================================= */
 
-function ChoiceButton({
-  children,
-  active,
-  onClick,
-}) {
+function ChoiceButton({ children, active, onClick }: ChoiceButtonProps) {
   return (
     <button
       type="button"
@@ -601,12 +630,7 @@ function ChoiceButton({
    CONTACT ITEM
 ========================================================= */
 
-function ContactItem({
-  icon: Icon,
-  children,
-  href,
-  title,
-}) {
+function ContactItem({ icon: Icon, children, href, title }: ContactItemProps) {
   const content = (
     <div className="group flex items-center gap-4">
       <div
@@ -660,11 +684,7 @@ function ContactItem({
    SOCIAL BUTTON
 ========================================================= */
 
-function SocialButton({
-  children,
-  href,
-  label,
-}) {
+function SocialButton({ children, href, label }: SocialButtonProps) {
   return (
     <Link
       href={href}

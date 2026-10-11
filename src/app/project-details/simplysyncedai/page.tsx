@@ -64,12 +64,12 @@ export default function SimplySyncedProjectPage() {
     <main className="min-h-screen overflow-hidden bg-[#080808] text-[#F5F5F5]">
       {/* HERO */}
       <section className="relative px-6 pb-16 pt-8 sm:px-10 lg:px-12 lg:pb-24">
-        <div className="pointer-events-none absolute left-0 top-40 h-72 w-72 rounded-full bg-red-600/[0.06] blur-[130px]" />
+        <div className="pointer-events-none absolute left-0 top-40 h-72 w-72 rounded-full bg-green-600/[0.06] blur-[130px]" />
 
         <div className="relative mt-10 mx-auto max-w-[1600px]">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#171717] px-5 py-3 text-sm text-white/70 transition-all hover:border-red-500/50 hover:text-red-500"
+            className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#171717] px-5 py-3 text-sm text-white/70 transition-all hover:border-green-500/50 hover:text-green-500"
           >
             <ArrowLeft size={17} />
             Back
@@ -82,7 +82,7 @@ export default function SimplySyncedProjectPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="mb-6 flex flex-wrap items-center gap-2 text-sm font-bold tracking-[0.15em] text-red-500">
+              <p className="mb-6 flex flex-wrap items-center gap-2 text-sm font-bold tracking-[0.15em] text-green-500">
                 <span>CRM</span>
                 <span>·</span>
                 <span>2025</span>
@@ -161,9 +161,9 @@ export default function SimplySyncedProjectPage() {
                       duration: 0.4,
                       delay: index * 0.07,
                     }}
-                    className="group flex min-h-[90px] items-start gap-4 rounded-xl border border-white/[0.07] bg-[#171717] p-6 transition-all duration-300 hover:border-red-500/40 hover:bg-[#1C1C1C]"
+                    className="group flex min-h-[90px] items-start gap-4 rounded-xl border border-white/[0.07] bg-[#171717] p-6 transition-all duration-300 hover:border-green-500/40 hover:bg-[#1C1C1C]"
                   >
-                    <span className="shrink-0 font-mono text-lg font-bold text-red-500">
+                    <span className="shrink-0 font-mono text-lg font-bold text-green-500">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
@@ -196,21 +196,21 @@ export default function SimplySyncedProjectPage() {
             <div className="rounded-2xl border border-white/[0.08] bg-[#171717] p-6 sm:p-8">
               <div className="space-y-5">
                 <div className="flex items-center gap-4">
-                  <Star size={20} className="text-red-500" />
+                  <Star size={20} className="text-green-500" />
                   <span className="text-lg text-white/65">
                     94% Match
                   </span>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <CalendarDays size={20} className="text-red-500" />
+                  <CalendarDays size={20} className="text-green-500" />
                   <span className="text-lg text-white/65">
                     2025
                   </span>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Layers3 size={20} className="text-red-500" />
+                  <Layers3 size={20} className="text-green-500" />
                   <span className="text-lg text-white/65">
                     {technologies.length} technologies
                   </span>
@@ -225,7 +225,7 @@ export default function SimplySyncedProjectPage() {
                 {technologies.map((technology) => (
                   <span
                     key={technology}
-                    className="rounded-md bg-[#242424] px-3 py-2 text-sm text-white/70 transition-colors hover:bg-red-500/10 hover:text-red-400"
+                    className="rounded-md bg-[#242424] px-3 py-2 text-sm text-white/70 transition-colors hover:bg-green-500/10 hover:text-green-400"
                   >
                     {technology}
                   </span>
@@ -236,7 +236,7 @@ export default function SimplySyncedProjectPage() {
                 href="https://simplysyncedai.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-9 flex items-center justify-center gap-2 rounded-lg bg-red-600 px-5 py-4 text-sm font-bold text-white transition-all hover:bg-red-500 hover:shadow-[0_0_25px_rgba(255,0,24,0.18)]"
+                className="mt-9 flex items-center justify-center gap-2 rounded-lg bg-green-600 px-5 py-4 text-sm font-bold text-white transition-all hover:bg-green-500 hover:shadow-[0_0_25px_rgba(255,0,24,0.18)]"
               >
                 Visit Website
                 <ArrowUpRight size={18} />

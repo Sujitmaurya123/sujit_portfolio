@@ -70,14 +70,14 @@ const projects = [
 ========================================================= */
 
 export default function Projects() {
-
-  const projectsRef = useRef(null);
+const projectsRef = useRef<HTMLDivElement>(null);
 
 
   /* =======================================================
      SCROLL LEFT
   ======================================================= */
 
+  
   const scrollLeft = () => {
     if (!projectsRef.current) return;
 
@@ -86,7 +86,6 @@ export default function Projects() {
       behavior: "smooth",
     });
   };
-
 
   /* =======================================================
      SCROLL RIGHT
@@ -100,6 +99,7 @@ export default function Projects() {
       behavior: "smooth",
     });
   };
+
 
 
   return (

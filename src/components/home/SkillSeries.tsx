@@ -1,13 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-  ExternalLink,
-} from "lucide-react";
+
 
 
 /* =========================================================

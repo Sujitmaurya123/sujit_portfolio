@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
-  ExternalLink,
   ArrowUpRight,
 } from "lucide-react";
 import { useRef } from "react";

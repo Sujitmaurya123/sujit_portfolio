@@ -2,25 +2,37 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-import {
-  Download,
-  Mail,
-  Play,
-  ArrowRight,
-} from "lucide-react";
-import { FaGithub,FaLinkedin ,FaInstagram,} from "react-icons/fa";
+import { Download, Mail, Play, ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
+
+/* =========================================================
+   TYPES
+========================================================= */
+
+interface RoleBadgeProps {
+  children: ReactNode;
+}
+
+interface SocialButtonProps {
+  href: string;
+  icon: ReactNode;
+}
+
+/* =========================================================
+   COMPONENT
+========================================================= */
 
 export default function Hero() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
-
       {/* =====================================================
           HERO
       ===================================================== */}
       <section className="relative min-h-screen overflow-hidden">
-
         {/* Background */}
         <div className="absolute inset-0">
           <Image
@@ -109,9 +121,7 @@ export default function Hero() {
             lg:px-10
           "
         >
-
           <div className="max-w-[900px]">
-
             {/* Featured */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -130,9 +140,7 @@ export default function Hero() {
                 FEATURED
               </span>
 
-              <span className="text-[#1DB954]">
-                •
-              </span>
+              <span className="text-[#1DB954]">•</span>
 
               <span
                 className="
@@ -160,7 +168,6 @@ export default function Hero() {
                 AVAILABLE
               </span>
             </motion.div>
-
 
             {/* Name */}
             <motion.h1
@@ -191,9 +198,7 @@ export default function Hero() {
               "
             >
               Sujit Kumar
-             
             </motion.h1>
-
 
             {/* Roles */}
             <motion.div
@@ -211,17 +216,10 @@ export default function Hero() {
               }}
               className="mt-8 flex flex-wrap gap-3"
             >
+              <RoleBadge>Full Stack Developer</RoleBadge>
 
-              <RoleBadge>
-                Full Stack Developer
-              </RoleBadge>
-
-              <RoleBadge>
-                AI Agent Developer
-              </RoleBadge>
-
+              <RoleBadge>AI Agent Developer</RoleBadge>
             </motion.div>
-
 
             {/* Description */}
             <motion.p
@@ -245,10 +243,9 @@ export default function Hero() {
                 sm:text-[13px]
               "
             >
-              Building scalable digital products, AI-powered systems
-              and production-ready applications for startups & enterprises.
+              Building scalable digital products, AI-powered systems and
+              production-ready applications for startups & enterprises.
             </motion.p>
-
 
             {/* =================================================
                 CTA
@@ -274,7 +271,6 @@ export default function Hero() {
                 gap-3
               "
             >
-
               {/* Projects */}
               <Link
                 href="/projects"
@@ -320,42 +316,39 @@ export default function Hero() {
                 />
               </Link>
 
-
               {/* Resume */}
-<a
-  href="/assets/CV_SujitKumar.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    group
-    flex
-    items-center
-    gap-3
-    rounded-full
-    border
-    border-white/10
-    bg-white/[0.08]
-    px-7
-    py-4
-    text-[13px]
-    font-bold
-    text-white
-    backdrop-blur-xl
-    transition-all
-    duration-300
-    hover:border-[#1DB954]/40
-    hover:bg-white/[0.12]
-  "
->
-  <Download
-    size={19}
-    className="transition-transform duration-300 group-hover:-translate-y-1"
-  />
+              <a
+                href="/assets/CV_SujitKumar.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group
+                  flex
+                  items-center
+                  gap-3
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/[0.08]
+                  px-7
+                  py-4
+                  text-[13px]
+                  font-bold
+                  text-white
+                  backdrop-blur-xl
+                  transition-all
+                  duration-300
+                  hover:border-[#1DB954]/40
+                  hover:bg-white/[0.12]
+                "
+              >
+                <Download
+                  size={19}
+                  className="transition-transform duration-300 group-hover:-translate-y-1"
+                />
 
-  View Resume
-</a>
-
-
+                View Resume
+              </a>
 
               {/* Hire */}
               <Link
@@ -386,9 +379,7 @@ export default function Hero() {
 
                 Hire Me
               </Link>
-
             </motion.div>
-
 
             {/* Social */}
             <motion.div
@@ -409,6 +400,14 @@ export default function Hero() {
                 gap-3
               "
             >
+              <SocialButton
+                href="https://leetcode.com/u/HsPUvJxbQr"
+                icon={<SiLeetcode size={18} />}
+              />
+              <SocialButton
+                href="https://www.geeksforgeeks.org/profile/sujitkic68ba5j?tab=activity"
+                icon={<SiGeeksforgeeks size={18} />}
+              />
 
               <SocialButton
                 href="https://github.com/Sujitmaurya123"
@@ -419,14 +418,9 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/thesujitkumar"
                 icon={<FaLinkedin size={18} />}
               />
-
-              
-
             </motion.div>
-
           </div>
         </div>
-
 
         {/* =====================================================
             BOTTOM META
@@ -456,7 +450,6 @@ export default function Hero() {
             lg:flex
           "
         >
-
           <div
             className="
               h-8
@@ -467,7 +460,6 @@ export default function Hero() {
           />
 
           <div>
-
             <p
               className="
                 text-sm
@@ -487,11 +479,8 @@ export default function Hero() {
             >
               Production systems, not demos.
             </p>
-
           </div>
-
         </motion.div>
-
 
         {/* Scroll */}
         <motion.div
@@ -516,7 +505,6 @@ export default function Hero() {
             md:flex
           "
         >
-
           <span
             className="
               text-[10px]
@@ -542,20 +530,17 @@ export default function Hero() {
               bg-[#1DB954]/60
             "
           />
-
         </motion.div>
-
       </section>
     </main>
   );
 }
 
-
 /* =============================================================
    ROLE BADGE
 ============================================================= */
 
-function RoleBadge({ children }) {
+function RoleBadge({ children }: RoleBadgeProps) {
   return (
     <span
       className="
@@ -586,12 +571,11 @@ function RoleBadge({ children }) {
   );
 }
 
-
 /* =============================================================
    SOCIAL BUTTON
 ============================================================= */
 
-function SocialButton({ href, icon }) {
+function SocialButton({ href, icon }: SocialButtonProps) {
   return (
     <a
       href={href}

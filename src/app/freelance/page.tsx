@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 import {
   ArrowRight,
@@ -20,12 +20,57 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+/* =========================================================
+   TYPES
+========================================================= */
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Service {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  points: string[];
+}
+
+interface Reason {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+interface SectionTitleProps {
+  children: ReactNode;
+}
+
+interface ServiceCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  points: string[];
+}
 
 /* =========================================================
    DATA
 ========================================================= */
 
-const stats = [
+const stats: Stat[] = [
   {
     value: "8+",
     label: "PROJECTS DELIVERED",
@@ -44,7 +89,7 @@ const stats = [
   },
 ];
 
-const services = [
+const services: Service[] = [
   {
     icon: Code2,
     title: "Full Stack Development",
@@ -146,7 +191,7 @@ const services = [
   },
 ];
 
-const reasons = [
+const reasons: Reason[] = [
   {
     icon: MessageCircle,
     title: "You talk to me, not a sales team",
@@ -173,7 +218,7 @@ const reasons = [
   },
 ];
 
-const process = [
+const process: ProcessStep[] = [
   {
     number: "1",
     title: "Discovery Call",
@@ -201,7 +246,7 @@ const process = [
   },
 ];
 
-const faqs = [
+const faqs: Faq[] = [
   {
     question: "How do we start?",
     answer:
@@ -229,7 +274,7 @@ const faqs = [
 ========================================================= */
 
 export default function FreelancePage() {
-  const [openFaq, setOpenFaq] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number>(0);
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#080808] text-white">
@@ -242,7 +287,7 @@ export default function FreelancePage() {
 
         <div className="absolute inset-0">
           <Image
-              src="/images/freelance.jpg"
+            src="/images/freelance.jpg"
             alt="Freelance workspace"
             fill
             priority
@@ -415,7 +460,7 @@ export default function FreelancePage() {
         ================================================== */}
 
         <section className="mt-24">
-          <SectionTitle>How We'll Work Together</SectionTitle>
+          <SectionTitle>How We&apos;ll Work Together</SectionTitle>
 
           <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {process.map((item) => (
@@ -585,7 +630,7 @@ export default function FreelancePage() {
               </h2>
 
               <p className="mx-auto mt-7 max-w-[800px] text-[18px] leading-8 text-white/60 md:text-[25px]">
-                Tell me what you're working on — I reply within 24 hours.
+                Tell me what you&apos;re working on — I reply within 24 hours.
               </p>
 
               <Link
@@ -631,7 +676,7 @@ export default function FreelancePage() {
    SECTION TITLE
 ========================================================= */
 
-function SectionTitle({ children }) {
+function SectionTitle({ children }: SectionTitleProps) {
   return (
     <h2
       className="
@@ -657,7 +702,7 @@ function ServiceCard({
   title,
   description,
   points,
-}) {
+}: ServiceCardProps) {
   return (
     <article
       className="

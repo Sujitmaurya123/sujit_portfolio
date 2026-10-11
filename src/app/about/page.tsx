@@ -2,17 +2,39 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CalendarDays,
-  GraduationCap,
-} from "lucide-react";
+import { ArrowRight, CalendarDays, GraduationCap } from "lucide-react";
+
+/* =========================================================
+   TYPES
+========================================================= */
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+type EducationColor = "orange" | "pink" | "green";
+
+interface EducationItemData {
+  number: string;
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  color: EducationColor;
+  latest: boolean;
+}
+
+interface EducationItemProps {
+  item: EducationItemData;
+  isLast: boolean;
+}
 
 /* =========================================================
    DATA
 ========================================================= */
 
-const stats = [
+const stats: Stat[] = [
   {
     value: "2+",
     label: "YEARS CODING",
@@ -31,13 +53,9 @@ const stats = [
   },
 ];
 
-const interests = [
-  "Writing",
-  "E-Games",
-  "Cooking",
-];
+const interests: string[] = ["Writing", "E-Games", "Cooking"];
 
-const education = [
+const education: EducationItemData[] = [
   {
     number: "01",
     degree: "High school",
@@ -83,7 +101,7 @@ export default function AboutPage() {
 
         <div className="absolute inset-0">
           <Image
-             src="/images/aboutme.jpg"
+            src="/images/aboutme.jpg"
             alt="About me"
             fill
             priority
@@ -150,11 +168,10 @@ export default function AboutPage() {
               md:leading-8
             "
           >
-            Full-Stack Developer specializing in end-to-end development —
-            from backend architecture to modern, responsive frontends.
-            Currently building AI-powered voice agents and
-            recommendation-driven platforms used by real businesses in
-            production.
+            Full-Stack Developer specializing in end-to-end development — from
+            backend architecture to modern, responsive frontends. Currently
+            building AI-powered voice agents and recommendation-driven
+            platforms used by real businesses in production.
           </p>
         </div>
       </section>
@@ -233,30 +250,32 @@ export default function AboutPage() {
 
           <div>
             <p className="text-[18px] leading-8 text-white/65 md:text-[20px] md:leading-9">
-              A highly motivated and skilled individual with a B.Tech in Computer Science and Engineering from UIET Kanpur. Proficient in full-stack web development, competitive programming, and UI/UX design. Demonstrates a strong foundation in computer science principles and practical experience in developing and deploying web applications. Passionate about solving complex problems through code and creating intuitive user interfaces.
+              A highly motivated and skilled individual with a B.Tech in
+              Computer Science and Engineering from UIET Kanpur. Proficient in
+              full-stack web development, competitive programming, and UI/UX
+              design. Demonstrates a strong foundation in computer science
+              principles and practical experience in developing and deploying
+              web applications. Passionate about solving complex problems
+              through code and creating intuitive user interfaces.
             </p>
 
             <p className="mt-7 text-[18px] leading-8 text-white/65 md:text-[20px] md:leading-9">
-              <strong className="font-bold text-white">
-                Currently:
-              </strong>{" "}
+              <strong className="font-bold text-white">Currently:</strong>{" "}
               Full-Stack Developer at{" "}
               <span className="font-semibold text-[#1DB954]">
                 Vereda Technologies
               </span>
-              , building production web, backend and mobile applications
-              with integrated AI recommendation systems, and developing an
+              , building production web, backend and mobile applications with
+              integrated AI recommendation systems, and developing an
               AI-powered calling agent for industrial automation.
             </p>
 
             <p className="mt-7 text-[18px] leading-8 text-white/65 md:text-[20px] md:leading-9">
-              <strong className="font-bold text-white">
-                Passion:
-              </strong>{" "}
-              I'm drawn to systems that connect: a recommendation engine
-              that actually improves a match, a voice agent that actually
-              books the appointment, a dashboard that actually gets checked
-              every morning. Currently exploring{" "}
+              <strong className="font-bold text-white">Passion:</strong>{" "}
+              I&apos;m drawn to systems that connect: a recommendation engine
+              that actually improves a match, a voice agent that actually books
+              the appointment, a dashboard that actually gets checked every
+              morning. Currently exploring{" "}
               <span className="text-[#1DB954]">LangChain</span>,{" "}
               <span className="text-[#1DB954]">MCP</span>, and multi-agent
               orchestration.
@@ -380,7 +399,7 @@ export default function AboutPage() {
         <div className="mx-auto flex max-w-[1100px] flex-col items-start justify-between gap-6 px-6 py-14 md:flex-row md:items-center md:px-10 lg:px-12">
           <div>
             <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#1DB954]">
-              Let's build
+              Let&apos;s build
             </p>
 
             <h2 className="mt-2 text-[28px] font-bold">
@@ -410,7 +429,6 @@ export default function AboutPage() {
             "
           >
             Start a Conversation
-
             <ArrowRight
               size={17}
               className="transition-transform group-hover:translate-x-1"
@@ -426,17 +444,14 @@ export default function AboutPage() {
    EDUCATION ITEM
 ========================================================= */
 
-function EducationItem({ item, isLast }) {
-  const backgrounds = {
-    orange:
-      "from-orange-500/20 via-orange-500/5 to-[#181818]",
-    pink:
-      "from-pink-500/20 via-pink-500/5 to-[#181818]",
-    green:
-      "from-[#1DB954]/20 via-[#1DB954]/5 to-[#181818]",
+function EducationItem({ item, isLast }: EducationItemProps) {
+  const backgrounds: Record<EducationColor, string> = {
+    orange: "from-orange-500/20 via-orange-500/5 to-[#181818]",
+    pink: "from-pink-500/20 via-pink-500/5 to-[#181818]",
+    green: "from-[#1DB954]/20 via-[#1DB954]/5 to-[#181818]",
   };
 
-  const iconColors = {
+  const iconColors: Record<EducationColor, string> = {
     orange: "text-orange-400",
     pink: "text-pink-400",
     green: "text-[#1DB954]",
@@ -455,21 +470,15 @@ function EducationItem({ item, isLast }) {
         md:grid-cols-[55px_170px_1fr]
         md:gap-6
         md:py-6
-        ${
-          isLast
-            ? "border-b-0"
-            : ""
-        }
+        ${isLast ? "border-b-0" : ""}
       `}
     >
       {/* Number */}
-
       <div className="pt-2 text-[24px] font-black leading-none text-white/[0.16] md:text-[29px]">
         {item.number}
       </div>
 
       {/* Icon card */}
-
       <div
         className={`
           relative
@@ -484,25 +493,8 @@ function EducationItem({ item, isLast }) {
           ${backgrounds[item.color]}
         `}
       >
-        {/* Latest badge */}
-
         {item.latest && (
-          <span
-            className="
-              absolute
-              left-1
-              top-1
-              rounded-[3px]
-              bg-[#1DB954]
-              px-2
-              py-1
-              text-[8px]
-              font-black
-              uppercase
-              tracking-wide
-              text-black
-            "
-          >
+          <span className="absolute left-1 top-1 rounded-[3px] bg-[#1DB954] px-2 py-1 text-[8px] font-black uppercase tracking-wide text-black">
             Latest
           </span>
         )}
@@ -511,14 +503,13 @@ function EducationItem({ item, isLast }) {
           size={34}
           strokeWidth={1.8}
           className={iconColors[item.color]}
+          aria-hidden="true"
         />
       </div>
 
       {/* Content */}
-
       <div className="min-w-0">
-        {/* Mobile latest */}
-
+        {/* Mobile latest badge */}
         {item.latest && (
           <div className="mb-2 md:hidden">
             <span className="rounded-[3px] bg-[#1DB954] px-2 py-1 text-[8px] font-black uppercase text-black">
@@ -528,27 +519,23 @@ function EducationItem({ item, isLast }) {
         )}
 
         {/* Degree */}
-
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <h3 className="text-[18px] font-bold text-white md:text-[19px]">
             {item.degree}
           </h3>
 
           <span className="flex items-center gap-1 text-[11px] text-white/35">
-            <CalendarDays size={12} />
-
+            <CalendarDays size={12} aria-hidden="true" />
             <span>&lt; 1 mo</span>
           </span>
         </div>
 
         {/* Institution */}
-
         <p className="mt-1 text-[15px] font-medium text-white/65">
           {item.institution}
         </p>
 
-        {/* Location + period */}
-
+        {/* Location and period */}
         <p className="mt-1 text-[12px] text-white/40">
           {item.location} · {item.period}
         </p>

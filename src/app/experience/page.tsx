@@ -1,13 +1,33 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import Image from "next/image";
 import { MapPin, CalendarDays } from "lucide-react";
+
+/* =========================================================
+   TYPES
+========================================================= */
+
+interface Experience {
+  role: string;
+  company: string;
+  location: string;
+  startDate: string;
+  endDate: string | null;
+  description: string;
+  technologies: string[];
+  current: boolean;
+}
+
+interface ExperienceCardProps {
+  experience: Experience;
+}
 
 /* =========================================================
    EXPERIENCE DATA
 ========================================================= */
 
-const experiences = [
+const experiences: Experience[] = [
   {
     role: "Full Stack Developer",
     company: "Vereda Technologies",
@@ -37,7 +57,7 @@ const experiences = [
     location: "Kanpur",
 
     startDate: "2024-10-01",
-    endDate: "2025-04-31",
+    endDate: "2025-04-30",
 
     description:
       "Developed a robust and scalable full-stack web application for the EdTech startup Projectile45, delivering seamless user experiences and efficient functionality.",
@@ -46,9 +66,15 @@ const experiences = [
 
     current: false,
   },
-
-  
 ];
+
+/* =========================================================
+   EMPTY SUBSCRIBE
+   — We don't need reactivity; the duration is computed once
+     per render from the current date.
+========================================================= */
+
+const emptySubscribe = () => () => {};
 
 /* =========================================================
    PAGE
@@ -66,7 +92,7 @@ export default function ExperiencePage() {
 
         <div className="absolute inset-0">
           <Image
-              src="/images/exp.jpg"
+            src="/images/exp.jpg"
             alt="Developer workspace"
             fill
             priority
@@ -122,7 +148,7 @@ export default function ExperiencePage() {
           {/* Description */}
 
           <p className="mt-7 max-w-[850px] text-[17px] font-medium leading-7 text-white/65 md:text-[21px]">
-            1 yr 6 mos in the industry — counted live against today's date.
+            1 yr 6 mos in the industry — counted live against today&apos;s date.
           </p>
         </div>
       </section>
@@ -149,10 +175,22 @@ export default function ExperiencePage() {
    EXPERIENCE CARD
 ========================================================= */
 
-function ExperienceCard({ experience }) {
-  const duration = calculateDuration(
-    experience.startDate,
-    experience.endDate
+function ExperienceCard({ experience }: ExperienceCardProps) {
+  /*
+    useSyncExternalStore lets us read the "current date"
+    safely without triggering hydration mismatches.
+
+    - Server snapshot  → "" (no unstable value during SSR)
+    - Client snapshot  → real duration, computed from new Date()
+
+    React renders "" on the server and during the initial
+    client pass, then swaps to the real value after hydration.
+  */
+
+  const duration = useSyncExternalStore(
+    emptySubscribe,
+    () => calculateDuration(experience.startDate, experience.endDate),
+    () => ""
   );
 
   return (
@@ -273,7 +311,7 @@ function ExperienceCard({ experience }) {
           >
             {duration}
 
-            {experience.current && " · ONGOING"}
+            {experience.current && duration && " · ONGOING"}
           </div>
         </div>
       </div>
@@ -322,7 +360,7 @@ function ExperienceCard({ experience }) {
    DATE FORMAT
 ========================================================= */
 
-function formatDate(dateString) {
+function formatDate(dateString: string | null): string {
   if (!dateString) {
     return "Present";
   }
@@ -339,12 +377,15 @@ function formatDate(dateString) {
    DURATION
 ========================================================= */
 
-function calculateDuration(startDate, endDate) {
+function calculateDuration(
+  startDate: string,
+  endDate: string | null
+): string {
   const start = new Date(startDate);
 
   const end = endDate ? new Date(endDate) : new Date();
 
-  let months =
+  const months =
     (end.getFullYear() - start.getFullYear()) * 12 +
     (end.getMonth() - start.getMonth());
 

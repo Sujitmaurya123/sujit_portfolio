@@ -70,32 +70,32 @@ const series = [
 ========================================================= */
 
 export default function PortfolioSections() {
-
+const projectsRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef(null);
 
   /* =======================================================
      SCROLL LEFT
   ======================================================= */
 
+  
   const scrollLeft = () => {
-    if (!scrollRef.current) return;
+    if (!projectsRef.current) return;
 
-    scrollRef.current.scrollBy({
-      left: -350,
+    projectsRef.current.scrollBy({
+      left: -360,
       behavior: "smooth",
     });
   };
-
 
   /* =======================================================
      SCROLL RIGHT
   ======================================================= */
 
   const scrollRight = () => {
-    if (!scrollRef.current) return;
+    if (!projectsRef.current) return;
 
-    scrollRef.current.scrollBy({
-      left: 350,
+    projectsRef.current.scrollBy({
+      left: 360,
       behavior: "smooth",
     });
   };

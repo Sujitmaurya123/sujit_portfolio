@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
@@ -8,10 +9,22 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose,
 } from "../components/ui/sheet";
 
-const links = [
+/* =========================================================
+   TYPES
+========================================================= */
+
+interface NavLink {
+  name: string;
+  path: string;
+}
+
+/* =========================================================
+   DATA
+========================================================= */
+
+const links: NavLink[] = [
   {
     name: "Home",
     path: "/",
@@ -46,12 +59,18 @@ const links = [
   },
 ];
 
+/* =========================================================
+   COMPONENT
+========================================================= */
+
 const MobileNav = () => {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const closeSheet = () => setOpen(false);
 
   return (
-    <Sheet>
-
+    <Sheet open={open} onOpenChange={setOpen}>
       {/* =====================================================
           MOBILE MENU BUTTON
       ===================================================== */}
@@ -88,13 +107,13 @@ const MobileNav = () => {
         />
       </SheetTrigger>
 
-
       {/* =====================================================
           MOBILE DRAWER
       ===================================================== */}
 
       <SheetContent
         side="right"
+        showCloseButton={false}
         className="
           w-[88%]
           max-w-[400px]
@@ -106,7 +125,6 @@ const MobileNav = () => {
           shadow-[-20px_0_60px_rgba(0,0,0,0.45)]
         "
       >
-
         {/* Green ambient glow */}
         <div
           className="
@@ -121,7 +139,6 @@ const MobileNav = () => {
             blur-[100px]
           "
         />
-
 
         {/* =================================================
             DRAWER CONTENT
@@ -140,7 +157,6 @@ const MobileNav = () => {
             sm:py-8
           "
         >
-
           {/* =================================================
               LOGO
           ================================================= */}
@@ -153,98 +169,89 @@ const MobileNav = () => {
               sm:mb-10
             "
           >
-            <SheetClose asChild>
-              <Link
-                href="/"
+            <Link
+              href="/"
+              onClick={closeSheet}
+              className="
+                group
+                inline-flex
+                items-center
+                gap-3
+              "
+            >
+              {/* Green logo */}
+              <div
                 className="
-                  group
-                  inline-flex
+                  flex
+                  h-10
+                  w-10
+                  shrink-0
                   items-center
-                  gap-3
+                  justify-center
+                  rounded-full
+                  bg-[#1DB954]
+                  transition-all
+                  duration-300
+                  group-hover:bg-[#1ED760]
+                  group-hover:shadow-[0_0_25px_rgba(29,185,84,0.3)]
                 "
               >
+                <div className="relative h-5 w-6">
+                  <span
+                    className="
+                      absolute
+                      left-0
+                      top-0
+                      h-[2px]
+                      w-6
+                      rounded-full
+                      bg-black
+                      rotate-[8deg]
+                    "
+                  />
 
-                {/* Green logo */}
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#1DB954]
-                    transition-all
-                    duration-300
-                    group-hover:bg-[#1ED760]
-                    group-hover:shadow-[0_0_25px_rgba(29,185,84,0.3)]
-                  "
-                >
-                  <div className="relative h-5 w-6">
+                  <span
+                    className="
+                      absolute
+                      left-[2px]
+                      top-[7px]
+                      h-[2px]
+                      w-5
+                      rounded-full
+                      bg-black
+                      rotate-[8deg]
+                    "
+                  />
 
-                    <span
-                      className="
-                        absolute
-                        left-0
-                        top-0
-                        h-[2px]
-                        w-6
-                        rounded-full
-                        bg-black
-                        rotate-[8deg]
-                      "
-                    />
-
-                    <span
-                      className="
-                        absolute
-                        left-[2px]
-                        top-[7px]
-                        h-[2px]
-                        w-5
-                        rounded-full
-                        bg-black
-                        rotate-[8deg]
-                      "
-                    />
-
-                    <span
-                      className="
-                        absolute
-                        left-[5px]
-                        top-[14px]
-                        h-[2px]
-                        w-3.5
-                        rounded-full
-                        bg-black
-                        rotate-[8deg]
-                      "
-                    />
-
-                  </div>
+                  <span
+                    className="
+                      absolute
+                      left-[5px]
+                      top-[14px]
+                      h-[2px]
+                      w-3.5
+                      rounded-full
+                      bg-black
+                      rotate-[8deg]
+                    "
+                  />
                 </div>
+              </div>
 
-
-                {/* Name */}
-                <h1
-                  className="
-                    text-xl
-                    font-black
-                    tracking-wide
-                    text-white
-                    sm:text-2xl
-                  "
-                >
-                  SUJIT
-                  <span className="text-[#1DB954]">
-                    .
-                  </span>
-                </h1>
-
-              </Link>
-            </SheetClose>
-
+              {/* Name */}
+              <h1
+                className="
+                  text-xl
+                  font-black
+                  tracking-wide
+                  text-white
+                  sm:text-2xl
+                "
+              >
+                SUJIT
+                <span className="text-[#1DB954]">.</span>
+              </h1>
+            </Link>
 
             {/* Divider */}
             <div
@@ -257,7 +264,6 @@ const MobileNav = () => {
             />
           </div>
 
-
           {/* =================================================
               NAVIGATION
           ================================================= */}
@@ -269,71 +275,64 @@ const MobileNav = () => {
               gap-1
             "
           >
-            {links.map((link, index) => {
-
+            {links.map((link) => {
               const isActive =
                 link.path === "/"
                   ? pathname === "/"
                   : pathname === link.path.split("#")[0];
 
               return (
-                <SheetClose
-                  asChild
-                  key={index}
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  onClick={closeSheet}
+                  className={`
+                    group
+                    flex
+                    min-h-[48px]
+                    items-center
+                    rounded-xl
+                    px-4
+                    py-3
+                    text-base
+                    
+                    transition-all
+                    duration-300
+
+                    sm:min-h-[52px]
+                    sm:text-lg
+
+                    ${
+                      isActive
+                        ? "bg-[#1DB954]/10 text-[#1DB954]"
+                        : "text-[#B3B3B3] hover:bg-white/[0.05] hover:text-white"
+                    }
+                  `}
                 >
-                  <Link
-                    href={link.path}
+                  {/* Active indicator */}
+                  <span
                     className={`
-                      group
-                      flex
-                      min-h-[48px]
-                      items-center
-                      rounded-xl
-                      px-4
-                      py-3
-                      text-base
-                      
+                      mr-3
+                      h-1.5
+                      w-1.5
+                      shrink-0
+                      rounded-full
                       transition-all
                       duration-300
 
-                      sm:min-h-[52px]
-                      sm:text-lg
-
                       ${
                         isActive
-                          ? "bg-[#1DB954]/10 text-[#1DB954]"
-                          : "text-[#B3B3B3] hover:bg-white/[0.05] hover:text-white"
+                          ? "bg-[#1DB954] shadow-[0_0_8px_rgba(29,185,84,0.7)]"
+                          : "bg-transparent group-hover:bg-[#1DB954]"
                       }
                     `}
-                  >
+                  />
 
-                    {/* Active indicator */}
-                    <span
-                      className={`
-                        mr-3
-                        h-1.5
-                        w-1.5
-                        shrink-0
-                        rounded-full
-                        transition-all
-                        duration-300
-
-                        ${
-                          isActive
-                            ? "bg-[#1DB954] shadow-[0_0_8px_rgba(29,185,84,0.7)]"
-                            : "bg-transparent group-hover:bg-[#1DB954]"
-                        }
-                      `}
-                    />
-
-                    {link.name}
-
-                  </Link>
-                </SheetClose>
+                  {link.name}
+                </Link>
               );
             })}
           </nav>
-
 
           {/* =================================================
               HIRE ME
@@ -345,42 +344,40 @@ const MobileNav = () => {
               sm:mt-9
             "
           >
-            <SheetClose asChild>
-              <Link
-                href="/#contact"
-                className="
-                  flex
-                  min-h-[48px]
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-[#1DB954]
-                  px-6
-                  py-3
-                  text-sm
-                  font-bold
-                  text-black
+            <Link
+              href="/#contact"
+              onClick={closeSheet}
+              className="
+                flex
+                min-h-[48px]
+                w-full
+                items-center
+                justify-center
+                rounded-full
+                bg-[#1DB954]
+                px-6
+                py-3
+                text-sm
+                font-bold
+                text-black
 
-                  shadow-[0_10px_30px_rgba(29,185,84,0.18)]
+                shadow-[0_10px_30px_rgba(29,185,84,0.18)]
 
-                  transition-all
-                  duration-300
+                transition-all
+                duration-300
 
-                  hover:bg-[#1ED760]
-                  hover:scale-[1.02]
+                hover:bg-[#1ED760]
+                hover:scale-[1.02]
 
-                  active:scale-[0.98]
+                active:scale-[0.98]
 
-                  sm:min-h-[52px]
-                  sm:text-base
-                "
-              >
-                Hire Me
-              </Link>
-            </SheetClose>
+                sm:min-h-[52px]
+                sm:text-base
+              "
+            >
+              Hire Me
+            </Link>
           </div>
-
 
           {/* =================================================
               BOTTOM INFORMATION
@@ -392,7 +389,6 @@ const MobileNav = () => {
               pt-10
             "
           >
-
             <div
               className="
                 mb-5
@@ -412,9 +408,7 @@ const MobileNav = () => {
               "
             >
               Full Stack Developer
-              <span className="mx-2 text-[#1DB954]">
-                •
-              </span>
+              <span className="mx-2 text-[#1DB954]">•</span>
               AI Engineer
             </p>
 
@@ -429,9 +423,7 @@ const MobileNav = () => {
             >
               Building digital products & AI systems
             </p>
-
           </div>
-
         </div>
       </SheetContent>
     </Sheet>
