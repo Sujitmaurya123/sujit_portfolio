@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://your-domain.com";
+const siteUrl = "https://sujit-portfolio-mpui.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

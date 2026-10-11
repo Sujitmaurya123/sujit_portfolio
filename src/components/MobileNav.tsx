@@ -31,31 +31,31 @@ const links: NavLink[] = [
   },
   {
     name: "About",
-    path: "/#about",
+    path: "/about",
   },
   {
     name: "Experience",
-    path: "/#experience",
+    path: "/experience",
   },
   {
     name: "Skills",
-    path: "/#skills",
+    path: "/skills",
   },
   {
     name: "Projects",
-    path: "/#projects",
+    path: "/projects",
   },
   {
     name: "AI Engineer",
-    path: "/#ai-engineer",
+    path: "/ai-engineer",
   },
   {
     name: "Freelance",
-    path: "/#freelance",
+    path: "/freelance",
   },
   {
     name: "Contact",
-    path: "/#contact",
+    path: "/contact",
   },
 ];
 
